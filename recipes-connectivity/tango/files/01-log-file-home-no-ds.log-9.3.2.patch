@@ -1,0 +1,14 @@
+diff -ruNp starter-Starter-7.0.orig/StarterUtil.h starter-Starter-7.0/StarterUtil.h
+--- starter-Starter-7.0.orig/StarterUtil.h	2018-02-09 10:08:57.000000000 +0100
++++ starter-Starter-7.0/StarterUtil.h	2018-12-10 10:02:15.661786277 +0100
+@@ -105,8 +105,8 @@ public:
+ #endif
+ #define	LogPath(s,home)		\
+ 		s  = home;	\
+-		s += slash;		\
+-		s += "ds.log";
++		s += slash;
++//		s += "ds.log";
+ 
+ #define STARTER_LOG_DEPTH	400
+ #define STARTER_STAT_DEPTH	2000

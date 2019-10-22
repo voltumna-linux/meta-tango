@@ -1,0 +1,30 @@
+diff -ruN cppTango-9.3.2.orig/configure/cmake_linux.cmake cppTango-9.3.2/configure/cmake_linux.cmake
+--- cppTango-9.3.2.orig/configure/cmake_linux.cmake	2018-09-12 10:27:16.000000000 +0200
++++ cppTango-9.3.2/configure/cmake_linux.cmake	2018-12-05 10:49:38.714432762 +0100
+@@ -4,7 +4,6 @@
+                             $<TARGET_OBJECTS:client_objects>
+                             $<TARGET_OBJECTS:idl_objects>
+                             $<TARGET_OBJECTS:jpeg_objects>
+-                            $<TARGET_OBJECTS:jpeg_mmx_objects>
+                             $<TARGET_OBJECTS:server_objects>)
+ target_link_libraries(tango PUBLIC ${ZMQ_PKG_LIBRARIES} ${OMNIORB_PKG_LIBRARIES} ${OMNICOS_PKG_LIBRARIES} ${OMNIDYN_PKG_LIBRARIES} ${CMAKE_DL_LIBS})
+ target_compile_options(tango PRIVATE -fPIC)
+@@ -21,7 +20,6 @@
+                                 $<TARGET_OBJECTS:client_objects>
+                                 $<TARGET_OBJECTS:idl_objects>
+                                 $<TARGET_OBJECTS:jpeg_objects>
+-                                $<TARGET_OBJECTS:jpeg_mmx_objects>
+                                 $<TARGET_OBJECTS:server_objects>)
+ target_link_libraries(tango-static PUBLIC ${ZMQ_PKG_LIBRARIES} ${OMNIORB_PKG_LIBRARIES} ${OMNICOS_PKG_LIBRARIES} ${OMNIDYN_PKG_LIBRARIES} ${CMAKE_DL_LIBS})
+ target_include_directories(tango-static PUBLIC ${ZMQ_PKG_INCLUDE_DIRS} ${OMNIORB_PKG_INCLUDE_DIRS} ${OMNIDYN_PKG_INCLUDE_DIRS})
+diff -ruN cppTango-9.3.2.orig/cppapi/server/CMakeLists.txt cppTango-9.3.2/cppapi/server/CMakeLists.txt
+--- cppTango-9.3.2.orig/cppapi/server/CMakeLists.txt	2018-09-12 10:27:16.000000000 +0200
++++ cppTango-9.3.2/cppapi/server/CMakeLists.txt	2018-12-05 10:49:14.722704640 +0100
+@@ -132,7 +132,6 @@
+ 
+ add_subdirectory(idl)
+ add_subdirectory(jpeg)
+-add_subdirectory(jpeg_mmx)
+ 
+ if(WIN32)
+     set(SOURCES_WIN

@@ -1,0 +1,18 @@
+[Unit]
+Description=Tango Starter Service
+Requires=network-online.target local-fs.target
+Wants=tangorc.service
+After=network-online.target tangorc.service
+Conflicts=shutdown.target
+# ConditionFileIsExecutable=/usr/bin/astorcli
+
+[Service]
+User=starter
+ExecStart=/usr/bin/Starter.sh
+# ExecStop=/usr/bin/astorcli %H stop
+KillMode=process
+RestartSec=1s
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
