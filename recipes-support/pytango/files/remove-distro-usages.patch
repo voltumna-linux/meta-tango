@@ -1,7 +1,36 @@
-diff -ruNp git.orig/setup.py git/setup.py
---- git.orig/setup.py	2019-11-27 14:30:22.870236575 +0100
-+++ git/setup.py	2019-11-27 14:31:44.294509389 +0100
-@@ -369,31 +369,7 @@ def setup_args():
+diff --git a/setup.py b/setup.py
+index 4087789..5c55e6c 100644
+--- a/setup.py
++++ b/setup.py
+@@ -26,12 +26,6 @@ from distutils.command.build import build as dftbuild
+ from distutils.unixccompiler import UnixCCompiler
+ from distutils.version import LooseVersion as V
+ 
+-# Distro import
+-try:
+-    from pip._vendor import distro
+-except ImportError:
+-    import platform as distro
+-
+ # Sphinx imports
+ try:
+     import sphinx
+@@ -55,14 +49,6 @@ PYTHON_VERSION = sys.version_info
+ PYTHON2 = (2,) <= PYTHON_VERSION < (3,)
+ PYTHON3 = (3,) <= PYTHON_VERSION < (4,)
+ 
+-# Linux distribution
+-distribution = distro.linux_distribution()[0].lower() if POSIX else ""
+-distribution_match = lambda names: any(x in distribution for x in names)
+-DEBIAN = distribution_match(['debian', 'ubuntu', 'mint'])
+-REDHAT = distribution_match(['redhat', 'fedora', 'centos', 'opensuse'])
+-GENTOO = distribution_match(['gentoo'])
+-CONDA = 'CONDA_PREFIX' in os.environ
+-
+ # Arguments
+ TESTING = any(x in sys.argv for x in ['test', 'pytest'])
+ 
+@@ -369,31 +355,7 @@ def setup_args():
  
      # special boost-python configuration
  
