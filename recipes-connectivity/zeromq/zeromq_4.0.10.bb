@@ -9,8 +9,9 @@ PACKAGECONFIG[libsodium] = "--with-libsodium, --without-libsodium, libsodium"
 SRC_URI = "http://github.com/zeromq/zeromq4-x/releases/download/v${PV}/zeromq-${PV}.tar.gz \
     file://run-ptest \
 "
-SRC_URI[md5sum] = "93d5973e5f8521d9a843e5e19ea36baa"
-SRC_URI[sha256sum] = "5afb57177d2d0798b6c06a4b355c1705abfb701e77ce7c0dff0ff11d03e3340d"
+
+SRC_URI[md5sum] = "0a6816152168073316dec68300d2b940"
+SRC_URI[sha256sum] = "ae08539d9f93561f7f7392841d65074fcde35ac2398f268311b5f4f39dced576"
 
 S = "${WORKDIR}/zeromq-${PV}"
 

@@ -7,16 +7,17 @@ LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=e6a600fd5e1d9cbde2d983680233ad02"
 
 
 S = "${WORKDIR}/git"
-SRCREV = "0c31693f67c4e2db12128f7a9db439295dfe889c"
+SRCREV = "8fbf0a29e26be2723b63a704a1a8e0664f671946"
 
 SRC_URI = " \
     git://github.com/tango-controls/pytango.git;protocol=https;branch=develop \
-    file://remove-distro-usages.patch \
+    file://force-boost_library_name.patch \
     "
 
 DEPENDS += "\
     boost \
     libtango \
+    ${PYTHON_PN}-numpy \
     "
 
 RDEPENDS_${PN} += "\

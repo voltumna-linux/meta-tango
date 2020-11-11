@@ -5,10 +5,10 @@ LIC_FILES_CHKSUM = "file://${COREBASE}/meta/files/common-licenses/GPL-3.0;md5=c7
 
 DEPENDS += "libtango"
 
-SRCREV = "e10aa238af731891415f2aa0c60336778fc063cd"
+SRCREV = "97c855832ce8776c12f12fe48ed238bc1d55c7c8"
 SRC_URI = "git://github.com/tango-controls/${BPN}.git;protocol=https;branch=master \
 		file://01-log-file-home-no-ds.log-9.3.2.patch \
-		file://02-starter-stdout-9.3.2.patch \
+		file://02-starter-stdout-9.3.4.patch \
 		file://simplify-Makefile.patch \
 		file://Starter.sh \
 		file://starter.service \
