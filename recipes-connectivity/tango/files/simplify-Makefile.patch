@@ -1,6 +1,7 @@
-diff -ruNp git.orig/Makefile git/Makefile
---- git.orig/Makefile	2019-10-28 21:31:05.640798398 +0000
-+++ git/Makefile	2019-10-28 21:31:41.224915576 +0000
+diff --git a/Makefile b/Makefile
+index b000693..dc3c4e3 100644
+--- a/Makefile
++++ b/Makefile
 @@ -1,141 +1,14 @@
 -#PROTECTED REGION ID(Starter::Makefile) ENABLED START#
 -#=============================================================================
@@ -39,7 +40,7 @@ diff -ruNp git.orig/Makefile git/Makefile
 -#
 -PACKAGE_NAME = Starter
 +Starter: $(OBJ)
-+	    $(CXX) $(CPPFLAGS) $(CFLAGS) $(CXFLAGS) $^ -o $@ $(LDFLAGS)
++	$(CXX) $(CPPFLAGS) $(CFLAGS) $(CXFLAGS) $^ -o $@ $(LDFLAGS)
  
 -# #=============================================================================
 -# # RELEASE_TYPE
@@ -153,4 +154,4 @@ diff -ruNp git.orig/Makefile git/Makefile
 -
 -#PROTECTED REGION END#
 +clean:
-+	    $(RM) $(OBJ) $(DEP)
++	$(RM) $(OBJ) $(DEP)
