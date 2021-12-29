@@ -34,6 +34,10 @@ do_compile_class-native () {
 do_install_append () {
 	install -d ${D}${sysconfdir}
 	install -m 0644 ${S}/sample.cfg ${D}${sysconfdir}/omniORB.cfg
+
+	# Set sane defaults
+	sed -i 's,^traceThreadId.*,traceThreadId = 0,g' ${D}${sysconfdir}/omniORB.cfg
+	sed -i 's,^traceTime.*,traceTime = 0,g' ${D}${sysconfdir}/omniORB.cfg
 }
 
 inherit autotools python3native pkgconfig
