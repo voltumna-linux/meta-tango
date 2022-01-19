@@ -29,7 +29,6 @@ do_install_append() {
 }
 
 USERADD_PACKAGES = "${PN}"
-GROUPADD_PARAM_${PN} = "--system tango"
-USERADD_PARAM_${PN} = "--system -d / -M -N -g tango --shell /bin/nologin starter"
+USERADD_PARAM_${PN} = "--no-create-home --system -d / --shell /bin/nologin controls"
 
 inherit useradd pkgconfig systemd
