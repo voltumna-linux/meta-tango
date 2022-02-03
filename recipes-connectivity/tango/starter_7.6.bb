@@ -29,6 +29,6 @@ do_install_append() {
 }
 
 USERADD_PACKAGES = "${PN}"
-USERADD_PARAM_${PN} = "--system --user-group --home-dir / --shell /bin/nologin controls"
+USERADD_PARAM_${PN} = "--uid 10000 --user-group --no-create-home --home-dir / --shell /bin/nologin controls"
 
 inherit useradd pkgconfig systemd
