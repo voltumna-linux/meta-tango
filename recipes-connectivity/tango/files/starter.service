@@ -9,10 +9,10 @@ Conflicts=shutdown.target
 [Service]
 User=controls
 Group=controls
-ExecStart=/usr/bin/Starter.sh
+ExecStart=/usr/bin/Starter %H
 # ExecStop=/usr/bin/astorcli %H stop
 KillMode=process
-RestartSec=1s
+RestartSec=5s
 Restart=on-failure
 
 [Install]
