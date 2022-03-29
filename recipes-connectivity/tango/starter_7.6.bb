@@ -10,20 +10,14 @@ SRC_URI = "git://gitlab.com/tango-controls/${BPN}.git;protocol=https;branch=main
 		file://01-log-file-home-no-ds.log.patch \
 		file://02-starter-stdout.patch \
 		file://simplify-Makefile.patch \
-		file://Starter.sh \
 		file://starter.service \
 	"
 
 S = "${WORKDIR}/git"
 
-FILES_${PN} += "${bindir}"
-
 SYSTEMD_SERVICE_${PN} = "starter.service"
 
 do_install_append() {
-	install -d ${D}${bindir}
-	install -m 0755 ${S}/Starter ${WORKDIR}/Starter.sh ${D}${bindir}
-
 	install -d ${D}${systemd_unitdir}/system
 	install -m 0644 ${WORKDIR}/starter.service ${D}${systemd_unitdir}/system
 }
