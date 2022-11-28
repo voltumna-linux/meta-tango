@@ -1,9 +1,9 @@
 DESCRIPTION = "Tango CORBA IDL file"
 HOMEPAGE = "http://www.tango-controls.org"
 LICENSE = "LGPLv3"
-LIC_FILES_CHKSUM = "file://${COREBASE}/meta/files/common-licenses/LGPL-3.0;md5=bfccfe952269fff2b407dd11f2f3083b"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=6c9432eab6a070a936cf9da6191d6db6"
 
-SRCREV = "ada81f822b9d24c0bb2d7d250896e9521368f681"
+SRCREV = "e4cfb92fbba847ddf112f36fc82d13118dd5141b"
 SRC_URI = "git://gitlab.com/tango-controls/${BPN}.git;protocol=https;branch=main"
 
 S = "${WORKDIR}/git"

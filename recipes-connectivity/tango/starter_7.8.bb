@@ -5,11 +5,10 @@ LIC_FILES_CHKSUM = "file://${COREBASE}/meta/files/common-licenses/GPL-3.0;md5=c7
 
 DEPENDS += "libtango"
 
-SRCREV = "Starter-${PV}"
+SRCREV = "eb055ee567ff2fae0ed8d0c8ed17513adf2583ac"
 SRC_URI = "git://gitlab.com/tango-controls/${BPN}.git;protocol=https;branch=main \
 		file://01-log-file-home-no-ds.log.patch \
 		file://02-starter-stdout.patch \
-		file://simplify-Makefile.patch \
 		file://starter.service \
 	"
 
@@ -20,14 +19,8 @@ FILES_${PN} += "${bindir}"
 SYSTEMD_SERVICE_${PN} = "starter.service"
 
 do_install_append() {
-	install -d ${D}${bindir}
-	install -m 0755 ${S}/Starter ${D}${bindir}
-
 	install -d ${D}${systemd_unitdir}/system
 	install -m 0644 ${WORKDIR}/starter.service ${D}${systemd_unitdir}/system
 }
 
-USERADD_PACKAGES = "${PN}"
-USERADD_PARAM_${PN} = "--uid 10000 --user-group --groups dialout --no-create-home --home-dir / --shell /bin/nologin controls"
-
-inherit useradd pkgconfig systemd
+inherit pkgconfig systemd cmake
