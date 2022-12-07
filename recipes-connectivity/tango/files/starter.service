@@ -5,14 +5,11 @@ Wants=tangorc.service
 After=network-online.target tangorc.service nss-lookup.target
 Conflicts=shutdown.target
 RequiresMountsFor=/runtime
-# ConditionFileIsExecutable=/usr/bin/astorcli
 
 [Service]
 User=controls
 Group=controls
-# ExecStart=/usr/bin/Starter %H
 ExecStart=/bin/sh -c 'sleep 1; exec /usr/bin/Starter `hostname`'
-# ExecStop=/usr/bin/astorcli %H stop
 KillMode=process
 RestartSec=5s
 Restart=on-failure

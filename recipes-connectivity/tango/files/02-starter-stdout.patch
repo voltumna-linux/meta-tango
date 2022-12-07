@@ -1,8 +1,8 @@
 diff --git a/StartProcessThread.cpp b/StartProcessThread.cpp
-index 5feabe3..9ec8144 100755
+index 84dee82..1cf61ce 100644
 --- a/StartProcessThread.cpp
 +++ b/StartProcessThread.cpp
-@@ -211,7 +211,7 @@ namespace Starter_ns {
+@@ -213,7 +213,7 @@ namespace Starter_ns {
  #endif
                          // Close standard out
                          close(1);
