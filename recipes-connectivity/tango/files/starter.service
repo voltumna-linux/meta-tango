@@ -5,11 +5,12 @@ Wants=tangorc.service
 After=network-online.target tangorc.service nss-lookup.target
 Conflicts=shutdown.target
 RequiresMountsFor=/runtime
+ConditionPathExists=/etc/hostname
 
 [Service]
 User=controls
 Group=controls
-ExecStart=/bin/sh -c 'sleep 1; exec /usr/bin/Starter `hostname`'
+ExecStart=/usr/bin/Starter %H
 KillMode=process
 RestartSec=5s
 Restart=on-failure
