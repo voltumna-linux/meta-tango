@@ -16,3 +16,5 @@ EXTRA_OECMAKE += " -DTANGO_IDL_BASE=${PKG_CONFIG_SYSROOT_DIR}/usr -DCMAKE_BUILD_
 	-DBUILD_TESTING=OFF -DOMNIIDL_TEST_RUN=0"
 
 inherit cmake python3native pkgconfig
+
+BBCLASSEXTEND = "native nativesdk"

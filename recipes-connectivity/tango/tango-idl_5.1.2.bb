@@ -9,3 +9,5 @@ SRC_URI = "git://gitlab.com/tango-controls/${BPN}.git;protocol=https;branch=main
 S = "${WORKDIR}/git"
 
 inherit cmake
+
+BBCLASSEXTEND = "native nativesdk"

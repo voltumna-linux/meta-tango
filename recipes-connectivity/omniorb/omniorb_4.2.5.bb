@@ -43,4 +43,4 @@ PARALLEL_MAKE = ""
 
 inherit autotools python3native pkgconfig
 
-BBCLASSEXTEND = "native"
+BBCLASSEXTEND = "native nativesdk"
