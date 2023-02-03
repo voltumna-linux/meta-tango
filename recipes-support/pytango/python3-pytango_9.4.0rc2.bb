@@ -14,7 +14,7 @@ SRC_URI = " \
 
 DEPENDS += "\
     boost \
-    libtango \
+    cpptango \
     ${PYTHON_PN}-numpy-native \
     "
 
