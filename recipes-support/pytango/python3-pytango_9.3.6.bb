@@ -14,7 +14,7 @@ SRC_URI = " \
 
 DEPENDS += "\
     boost \
-    libtango \
+    cpptango \
     ${PYTHON_PN}-numpy-native \
     "
 
@@ -24,3 +24,5 @@ RDEPENDS_${PN} += "\
     "
 
 inherit pypi pkgconfig setuptools3
+
+BBCLASSEXTEND = "native nativesdk"

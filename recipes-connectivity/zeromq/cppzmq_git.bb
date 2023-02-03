@@ -18,3 +18,5 @@ EXTRA_OECMAKE = "-DCPPZMQ_BUILD_TESTS=OFF"
 PACKAGES = "${PN}-dev"
 
 RDEPENDS_${PN}-dev = "zeromq-dev"
+
+BBCLASSEXTEND = "native nativesdk"
