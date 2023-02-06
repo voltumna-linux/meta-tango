@@ -12,7 +12,7 @@ SRC_URI = "git://gitlab.com/tango-controls/cppTango.git;protocol=https;branch=ma
 
 S = "${WORKDIR}/git"
 
-EXTRA_OECMAKE += " -DTANGO_IDL_BASE=${PKG_CONFIG_SYSROOT_DIR}/usr -DCMAKE_BUILD_TYPE=Release \
+EXTRA_OECMAKE += " -DTANGO_IDL_BASE=${STAGING_EXECPREFIXDIR} -DCMAKE_BUILD_TYPE=Release \
 	-DBUILD_TESTING=OFF -DOMNIIDL_TEST_RUN=0"
 
 inherit cmake python3native pkgconfig
