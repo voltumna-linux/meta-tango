@@ -14,6 +14,12 @@ S = "${WORKDIR}/git"
 
 EXTRA_OECMAKE += " -DTANGO_IDL_BASE=${STAGING_EXECPREFIXDIR} -DCMAKE_BUILD_TYPE=Release \
 	-DBUILD_TESTING=OFF -DOMNIIDL_TEST_RUN=0"
+EXTRA_OECMAKE_BUILD = "doc"
+
+do_install:append() {
+	install -d ${D}${docdir}/${BPN}
+	cp -R ${B}/doc_html ${D}${docdir}/${BPN}/
+}
 
 inherit cmake python3native pkgconfig
 
