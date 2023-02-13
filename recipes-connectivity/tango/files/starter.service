@@ -5,7 +5,7 @@ Wants=tangorc.service
 After=network-online.target tangorc.service nss-lookup.target
 Conflicts=shutdown.target
 RequiresMountsFor=/runtime
-ConditionPathExists=/etc/hostname
+ConditionPathIsDirectory=/runtime/site/%H/log
 
 [Service]
 User=controls
