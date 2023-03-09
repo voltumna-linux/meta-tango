@@ -25,4 +25,4 @@ RDEPENDS_${PN} += "\
 
 inherit pypi pkgconfig setuptools3
 
-BBCLASSEXTEND = "native nativesdk"
+BBCLASSEXTEND = "nativesdk"

@@ -24,4 +24,4 @@ do_install_append() {
 
 inherit cmake python3native pkgconfig
 
-BBCLASSEXTEND = "native nativesdk"
+BBCLASSEXTEND = "nativesdk"
