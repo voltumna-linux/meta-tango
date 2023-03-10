@@ -6,7 +6,7 @@ LICENSE = "LGPL-3.0-only"
 LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=9b80b59e376a3d99efcebbbcfa349133"
 
 PYPI_PACKAGE = "pytango"
-SRC_URI[sha256sum] = "306dade110d5fc9d96c23eebe759e9cfc2daac48c8331d2ce675214c1fcf557e"
+SRC_URI[sha256sum] = "bc22fe5f06ac0e0ff4affcbd18b65b2d1367f34e20b8b2f11e1182b376737a68"
 
 SRC_URI = " \
     file://force-boost_library_name.patch \
@@ -25,4 +25,4 @@ RDEPENDS:${PN} += "\
 
 inherit pypi pkgconfig setuptools3
 
-BBCLASSEXTEND = "native nativesdk"
+BBCLASSEXTEND = "nativesdk"
