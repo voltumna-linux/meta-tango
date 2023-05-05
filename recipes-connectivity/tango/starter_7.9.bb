@@ -5,7 +5,7 @@ LIC_FILES_CHKSUM = "file://${COREBASE}/meta/files/common-licenses/GPL-3.0-only;m
 
 DEPENDS += "cpptango"
 
-SRCREV = "eb055ee567ff2fae0ed8d0c8ed17513adf2583ac"
+SRCREV = "ed193937fdfdeae6527cc6aa499ef821dea0c1d1"
 SRC_URI = "git://gitlab.com/tango-controls/${BPN}.git;protocol=https;branch=main \
 		file://01-log-file-home-no-ds.log.patch \
 		file://02-starter-stdout.patch \
@@ -23,4 +23,4 @@ do_install:append() {
 	install -m 0644 ${WORKDIR}/starter.service ${D}${systemd_unitdir}/system
 }
 
-inherit cmake pkgconfig systemd
+inherit pkgconfig systemd cmake
