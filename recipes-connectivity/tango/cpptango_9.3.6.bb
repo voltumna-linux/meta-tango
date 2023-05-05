@@ -6,7 +6,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=6c9432eab6a070a936cf9da6191d6db6"
 
 DEPENDS += "omniorb-native omniorb tango-idl cppzmq libjpeg-turbo doxygen-native graphviz-native"
 
-SRCREV = "a413298ed9433845c949616eec500dfe24ef0647"
+SRCREV = "47445b7f035cef5c2a954157afd08914a1cbb64c"
 SRC_URI = "git://gitlab.com/tango-controls/cppTango.git;protocol=https;branch=9.3-backports \
 	file://disable-mmx.patch \
 "
