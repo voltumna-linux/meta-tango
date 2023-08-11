@@ -10,6 +10,7 @@ ConditionPathIsDirectory=/runtime/site/%H/log
 [Service]
 User=controls
 Group=controls
+EnvironmentFile=/run/tango/corba
 ExecStart=/usr/bin/Starter %H
 KillMode=process
 RestartSec=5s
