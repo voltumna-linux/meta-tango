@@ -4,7 +4,7 @@ Requires=network-online.target nss-lookup.target
 Wants=tangorc.service
 After=network-online.target tangorc.service nss-lookup.target
 Conflicts=shutdown.target
-RequiresMountsFor=/runtime
+RequiresMountsFor=/runtime/site/%H
 ConditionPathIsDirectory=/runtime/site/%H/log
 
 [Service]
