@@ -8,8 +8,8 @@ RequiresMountsFor=/runtime/site/%H
 ConditionPathIsDirectory=/runtime/site/%H/log
 
 [Service]
-User=controls
-Group=controls
+User=root
+Group=root
 EnvironmentFile=/run/tango/corba
 ExecStart=/usr/bin/Starter %H
 KillMode=process
