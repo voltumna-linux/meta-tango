@@ -12,6 +12,7 @@ SRC_URI:append = "\
     file://0001-beforeauto-cross.patch \
     file://0002-python-shebang.patch \
     file://0003-embedded-appl.patch \
+    file://0004-remove-distutils-usage.patch \
 "
 
 S = "${WORKDIR}/omniORB-${PV}"
