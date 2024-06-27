@@ -7,7 +7,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=6c9432eab6a070a936cf9da6191d6db6"
 DEPENDS += "omniorb-native omniorb tango-idl cppzmq libjpeg-turbo doxygen-native graphviz-native"
 
 SRCREV = "d274f4865651a7a58921c6a580f6ac3697dbaf74"
-SRC_URI = "git://gitlab.com/tango-controls/cppTango.git;protocol=https;branch=main \
+SRC_URI = "git://gitlab.com/tango-controls/cppTango.git;protocol=https;nobranch=1 \
 	"
 
 S = "${WORKDIR}/git"
