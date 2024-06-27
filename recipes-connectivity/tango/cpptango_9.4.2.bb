@@ -12,7 +12,9 @@ SRC_URI = "git://gitlab.com/tango-controls/cppTango.git;protocol=https;nobranch=
 
 S = "${WORKDIR}/git"
 
-EXTRA_OECMAKE += " -DTANGO_IDL_BASE=${STAGING_EXECPREFIXDIR} -DCMAKE_BUILD_TYPE=Release \
+EXTRA_OECMAKE += " -DTANGO_IDL_BASE=${STAGING_EXECPREFIXDIR} \
+	-DOMNIIDL=${STAGING_DIR_NATIVE}/usr/bin/omniidl \
+	-DCMAKE_BUILD_TYPE=Release \
 	-DBUILD_TESTING=OFF -DOMNIIDL_TEST_RUN=0"
 EXTRA_OECMAKE_BUILD = "doc"
 
