@@ -41,6 +41,8 @@ do_install:append () {
 }
 
 PARALLEL_MAKE = ""
+INSANE_SKIP:${PN} += "patch-status"
+INSANE_SKIP:${PN}-native += "patch-status"
 
 inherit autotools python3native pkgconfig
 
