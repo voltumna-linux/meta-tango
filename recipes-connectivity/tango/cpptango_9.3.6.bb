@@ -9,6 +9,7 @@ DEPENDS += "omniorb-native omniorb tango-idl cppzmq libjpeg-turbo doxygen-native
 SRCREV = "47445b7f035cef5c2a954157afd08914a1cbb64c"
 SRC_URI = "git://gitlab.com/tango-controls/cppTango.git;protocol=https;branch=9.3-backports \
 	file://disable-mmx.patch \
+	file://fix_wrong_comment.patch \
 "
 
 S = "${WORKDIR}/git"
