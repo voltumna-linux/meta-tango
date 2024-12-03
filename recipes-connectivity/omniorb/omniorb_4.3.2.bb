@@ -6,14 +6,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=1b422f7cda3870b9c4b040b68ba1c0fe"
 DEPENDS += "omniorb-native python3"
 
 SRC_URI = "http://downloads.sourceforge.net/omniorb/omniORB-${PV}.tar.bz2"
-SRC_URI[sha256sum] = "f05cf999fb2f4c24c1173b3c44ad97215591d0d1a48d49ac0843c464efe073bb"
-
-SRC_URI:append = "\
-    file://0001-beforeauto-cross.patch \
-    file://0002-python-shebang.patch \
-    file://0003-embedded-appl.patch \
-    file://0004-remove-distutils-usage.patch \
-"
+SRC_URI[sha256sum] = "1c745330d01904afd7a1ed0a5896b9a6e53ac1a4b864a48503b93c7eecbf1fa8"
 
 S = "${WORKDIR}/omniORB-${PV}"
 
@@ -41,8 +34,6 @@ do_install:append () {
 }
 
 PARALLEL_MAKE = ""
-INSANE_SKIP:${PN} += "patch-status"
-INSANE_SKIP:${PN}-native += "patch-status"
 
 inherit autotools python3native pkgconfig
 
