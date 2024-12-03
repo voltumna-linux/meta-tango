@@ -6,13 +6,15 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=6c9432eab6a070a936cf9da6191d6db6"
 
 DEPENDS += "omniorb-native omniorb tango-idl cppzmq libjpeg-turbo doxygen-native graphviz-native"
 
-SRCREV = "d274f4865651a7a58921c6a580f6ac3697dbaf74"
-SRC_URI = "git://gitlab.com/tango-controls/cppTango.git;protocol=https;nobranch=1 \
-	"
+SRCREV = "29df0972ac8fbaf0158bda727100dba0916a190c"
+SRC_URI = "git://gitlab.com/tango-controls/cppTango.git;protocol=https;branch=9.3-backports \
+	file://disable-mmx.patch \
+	file://fix_wrong_comment.patch \
+"
 
 S = "${WORKDIR}/git"
 
-EXTRA_OECMAKE += " -DTANGO_IDL_BASE=${STAGING_EXECPREFIXDIR} \
+EXTRA_OECMAKE += " -DIDL_BASE=${STAGING_EXECPREFIXDIR} \
 	-DOMNIIDL=${STAGING_DIR_NATIVE}/usr/bin/omniidl \
 	-DCMAKE_BUILD_TYPE=Release \
 	-DBUILD_TESTING=OFF -DOMNIIDL_TEST_RUN=0"
