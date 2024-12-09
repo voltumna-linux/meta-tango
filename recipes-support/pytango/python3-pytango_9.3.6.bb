@@ -19,6 +19,7 @@ DEPENDS += "\
     "
 
 RDEPENDS:${PN} += "\
+    omniorb \
     ${PYTHON_PN}-numpy \
     ${PYTHON_PN}-six \
     "
