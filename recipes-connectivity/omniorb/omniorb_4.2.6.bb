@@ -6,7 +6,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=1b422f7cda3870b9c4b040b68ba1c0fe"
 DEPENDS += "omniorb-native python3"
 
 SRC_URI = "http://downloads.sourceforge.net/omniorb/omniORB-${PV}.tar.bz2"
-SRC_URI[sha256sum] = "f05cf999fb2f4c24c1173b3c44ad97215591d0d1a48d49ac0843c464efe073bb"
+SRC_URI[sha256sum] = "17c15da150d08e86d1c769b28d76c3b80d446fcd611a3af21055efc87f17e7f5"
 
 SRC_URI_append = "\
     file://0001-beforeauto-cross.patch \
