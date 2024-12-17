@@ -18,8 +18,9 @@ DEPENDS += "\
     ${PYTHON_PN}-numpy-native \
     "
 
-RDEPENDS_${PN} += "\
-    omniorb \
+INSANE_SKIP:${PN} += "file-rdeps"
+
+RDEPENDS:${PN} += "\
     ${PYTHON_PN}-numpy \
     ${PYTHON_PN}-six \
     "
