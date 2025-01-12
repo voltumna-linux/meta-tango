@@ -7,6 +7,9 @@ DEPENDS += "omniorb-native python3"
 
 SRC_URI = "http://downloads.sourceforge.net/omniorb/omniORB-${PV}.tar.bz2"
 SRC_URI[sha256sum] = "1c745330d01904afd7a1ed0a5896b9a6e53ac1a4b864a48503b93c7eecbf1fa8"
+SRC_URI:append = "\
+    file://0002-python-shebang.patch \
+"
 
 S = "${WORKDIR}/omniORB-${PV}"
 
