@@ -3,7 +3,7 @@ HOMEPAGE = "http://omniorb.sourceforge.net"
 LICENSE = "GPL-2.0-only"
 LIC_FILES_CHKSUM = "file://COPYING;md5=1b422f7cda3870b9c4b040b68ba1c0fe"
 
-DEPENDS += "omniorb-native python3"
+DEPENDS += "omniorb-native python3 openssl"
 
 SRC_URI = "http://downloads.sourceforge.net/omniorb/omniORB-${PV}.tar.bz2"
 SRC_URI[sha256sum] = "1c745330d01904afd7a1ed0a5896b9a6e53ac1a4b864a48503b93c7eecbf1fa8"
@@ -13,7 +13,7 @@ SRC_URI:append = "\
 
 S = "${WORKDIR}/omniORB-${PV}"
 
-EXTRA_OECONF += "--disable-longdouble"
+EXTRA_OECONF += "--disable-longdouble --with-openssl"
 
 CONFFILES:${PN} += "/etc/omniORB.cfg"
 FILES:${PN}-dev += "${libdir}/python${PYTHON_BASEVERSION}"
