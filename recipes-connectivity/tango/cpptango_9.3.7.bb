@@ -5,6 +5,7 @@ LICENSE = "LGPL-3.0-only"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=6c9432eab6a070a936cf9da6191d6db6"
 
 DEPENDS += "omniorb-native omniorb tango-idl cppzmq libjpeg-turbo doxygen-native graphviz-native"
+RDEPENDS_${PN} += "omniorb"
 
 SRCREV = "29df0972ac8fbaf0158bda727100dba0916a190c"
 SRC_URI = "git://gitlab.com/tango-controls/cppTango.git;protocol=https;branch=9.3-backports \
