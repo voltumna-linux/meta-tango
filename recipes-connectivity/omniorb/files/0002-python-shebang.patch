@@ -1,7 +1,7 @@
-Index: omniORB/src/tool/omniidl/python/scripts/omniidl.in
+Index: omniORB/src/tool/omniidl/python2/scripts/omniidl.in
 ===================================================================
---- omniORB.orig/src/tool/omniidl/python/scripts/omniidl.in
-+++ omniORB/src/tool/omniidl/python/scripts/omniidl.in
+--- omniORB.orig/src/tool/omniidl/python2/scripts/omniidl.in
++++ omniORB/src/tool/omniidl/python2/scripts/omniidl.in
 @@ -1,4 +1,4 @@
 -#!@PYTHON@
 +#!/usr/bin/env python
