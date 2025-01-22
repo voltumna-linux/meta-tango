@@ -1,0 +1,28 @@
+SUMMARY = "Tango for Python"
+DESCRIPTION = "PyTango is a python module that exposes to Python the complete Tango C++ API"
+HOMEPAGE = "https://pytango.readthedocs.io/"
+
+LICENSE = "LGPL-3.0-only"
+LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=855580e1a55a9af704c90fae138fe0d1"
+
+DEFAULT_PREFERENCE = "-1"
+
+PYPI_PACKAGE = "pytango"
+SRC_URI[sha256sum] = "a83318d51d8339fa121e308d9e70dea0046c5cd558670a1906ddade0e9d914d2"
+
+DEPENDS += "\
+    boost \
+    cpptango \
+    ${PYTHON_PN}-numpy-native \
+    "
+
+INSANE_SKIP:${PN} += "file-rdeps"
+
+RDEPENDS:${PN} += "\
+    ${PYTHON_PN}-numpy \
+    ${PYTHON_PN}-six \
+    "
+
+inherit pypi pkgconfig setuptools3
+
+BBCLASSEXTEND = "nativesdk"
