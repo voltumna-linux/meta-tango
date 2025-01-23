@@ -24,7 +24,7 @@ SRCREV_FORMAT = "pytango_cmakemodules"
 
 S = "${WORKDIR}/git"
 
-FILES:${PN} += " ${PYTHON_SITEPACKAGES_DIR}"
+FILES_${PN} += " ${PYTHON_SITEPACKAGES_DIR}"
 do_install() {
 	install -d ${D}${PYTHON_SITEPACKAGES_DIR}
 
@@ -38,7 +38,7 @@ do_install() {
 	${PYTHON_PN} ${STAGING_LIBDIR}/${PYTHON_DIR}/py_compile.py ${D}${PYTHON_SITEPACKAGES_DIR}/tango/*.py
 }
 
-RDEPENDS:${PN} += "\
+RDEPENDS_${PN} += "\
     ${PYTHON_PN}-numpy \
     ${PYTHON_PN}-packaging \
     ${PYTHON_PN}-psutil \
