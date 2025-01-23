@@ -15,12 +15,10 @@ DEPENDS += "\
 	${PYTHON_PN}-pybind11-native \
 	"
 
-SRC_URI = "git://gitlab.com/tango-controls/pytango.git;name=pytango;protocol=https;branch=develop \
-	git://gitlab.com/tango-controls/TangoCMakeModules.git;destsuffix=git/TangoCMakeModules;name=cmakemodules;protocol=https;branch=main \
+SRCREV = "82dff8fe0150a5e57699a7c413bb7367cb6c76c7"
+SRC_URI = "\
+	gitsm://gitlab.com/tango-controls/pytango.git;protocol=https;branch=stable \
 	"
-SRCREV_pytango = "82dff8fe0150a5e57699a7c413bb7367cb6c76c7"
-SRCREV_cmakemodules = "c3945dbd4b01931b5c1191ed662f69857ff0db70"
-SRCREV_FORMAT = "pytango_cmakemodules"
 
 S = "${WORKDIR}/git"
 
