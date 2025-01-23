@@ -12,7 +12,7 @@ SRC_URI = "git://gitlab.com/tango-controls/${BPN}.git;name=starter;protocol=http
 	file://starter.service \
 	"
 SRCREV_starter = "2c40d9086e4b95e2fea14d0e519667aaa77b68de"
-SRCREV_cmakemodules = "dfc42901855bc7aae72a132e6f3373bab8660747"
+SRCREV_cmakemodules = "717bc8dc6aa7d97a849699d5afb8fc87d4c77b9c"
 SRCREV_FORMAT = "starter_cmakemodules"
 
 S = "${WORKDIR}/git"
