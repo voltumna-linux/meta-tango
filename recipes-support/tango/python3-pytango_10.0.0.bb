@@ -10,9 +10,6 @@ DEPENDS += "\
 	boost \
 	cpptango \
 	${PYTHON_PN}-numpy-native \
-	${PYTHON_PN}-build-native \
-	${PYTHON_PN}-scikit-build-native \
-	${PYTHON_PN}-pybind11-native \
 	"
 
 SRCREV = "82dff8fe0150a5e57699a7c413bb7367cb6c76c7"
@@ -23,14 +20,17 @@ SRC_URI = "\
 S = "${WORKDIR}/git"
 
 FILES:${PN} += " ${PYTHON_SITEPACKAGES_DIR}"
-do_install() {
+do_install:append() {
+	rm -fr ${D}/*
+
 	install -d ${D}${PYTHON_SITEPACKAGES_DIR}
 
 	install -m 0644 ${S}/PyTango/__init__.py ${D}${PYTHON_SITEPACKAGES_DIR}/PyTango.py
 	cp -r ${S}/tango ${D}${PYTHON_SITEPACKAGES_DIR}
 	rm -fr ${D}${PYTHON_SITEPACKAGES_DIR}/tango/databaseds
 	PYTHON_LIBVER="$(echo ${PYTHON_BASEVERSION} | sed 's/\([0-9]*\).\([0-9]*\)/\1\2/g')"
-	install -m 0755 ${B}/_tango.so.${PV} ${D}${PYTHON_SITEPACKAGES_DIR}/tango/_tango.cpython-${PYTHON_LIBVER}-${BUILD_SYS}-gnu.so
+	install -m 0755 ${B}/_tango.so.${PV} \
+		${D}${PYTHON_SITEPACKAGES_DIR}/tango/_tango.cpython-${PYTHON_LIBVER}-${BUILD_SYS}-gnu.so
 
 	${PYTHON_PN} ${STAGING_LIBDIR}/${PYTHON_DIR}/py_compile.py ${D}${PYTHON_SITEPACKAGES_DIR}/PyTango.py
 	${PYTHON_PN} ${STAGING_LIBDIR}/${PYTHON_DIR}/py_compile.py ${D}${PYTHON_SITEPACKAGES_DIR}/tango/*.py
