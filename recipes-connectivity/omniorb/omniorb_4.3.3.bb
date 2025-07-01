@@ -9,6 +9,7 @@ SRC_URI = "http://downloads.sourceforge.net/omniorb/omniORB-${PV}.tar.bz2"
 SRC_URI[sha256sum] = "accd25e2cb70c4e33ed227b0d93e9669e38c46019637887c771398870ed45e7a"
 SRC_URI:append = "\
     file://0002-python-shebang.patch \
+    file://0002-add-pkg-config-for-omnisslTP4-and-omniCodeSets4.patch \
 "
 
 S = "${WORKDIR}/omniORB-${PV}"
