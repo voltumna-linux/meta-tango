@@ -15,6 +15,9 @@ S = "${WORKDIR}/omniORB-${PV}"
 
 EXTRA_OECONF += "--disable-longdouble --with-openssl"
 
+CFLAGS += "-I${STAGING_INCDIR}/python${PYTHON_BASEVERSION}"
+CXXFLAGS += "-I${STAGING_INCDIR}/python${PYTHON_BASEVERSION}"
+
 CONFFILES:${PN} += "/etc/omniORB.cfg"
 FILES:${PN}-dev += "${libdir}/python${PYTHON_BASEVERSION}"
 
