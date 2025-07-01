@@ -13,7 +13,14 @@ SRC_URI:append = "\
 
 S = "${WORKDIR}/omniORB-${PV}"
 
-EXTRA_OECONF += "--disable-longdouble --with-openssl"
+PACKAGECONFIG ??= " \
+	ssl \
+	${@bb.utils.contains('DISTRO_FEATURES', 'ipv6', 'ipv6', '', d)} \
+	${@bb.utils.contains('TARGET_ARCH', 'arm', 'nolongdouble', '', d)} \
+"
+PACKAGECONFIG[ipv6] = "--enable-ipv6,--disable-ipv6"
+PACKAGECONFIG[nolongdouble] = "--disable-longdouble,"
+PACKAGECONFIG[ssl] = "--with-openssl,--without-openssl,openssl,openssl"
 
 CFLAGS += "-I${STAGING_INCDIR}/python${PYTHON_BASEVERSION}"
 CXXFLAGS += "-I${STAGING_INCDIR}/python${PYTHON_BASEVERSION}"
