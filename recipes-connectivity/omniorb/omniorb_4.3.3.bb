@@ -9,11 +9,22 @@ SRC_URI = "http://downloads.sourceforge.net/omniorb/omniORB-${PV}.tar.bz2"
 SRC_URI[sha256sum] = "accd25e2cb70c4e33ed227b0d93e9669e38c46019637887c771398870ed45e7a"
 SRC_URI:append = "\
     file://0002-python-shebang.patch \
+    file://0002-add-pkg-config-for-omnisslTP4-and-omniCodeSets4.patch \
 "
 
 S = "${UNPACKDIR}/omniORB-${PV}"
 
-EXTRA_OECONF += "--disable-longdouble --with-openssl"
+PACKAGECONFIG ??= " \
+	ssl \
+	${@bb.utils.contains('DISTRO_FEATURES', 'ipv6', 'ipv6', '', d)} \
+	${@bb.utils.contains('TARGET_ARCH', 'arm', 'nolongdouble', '', d)} \
+"
+PACKAGECONFIG[ipv6] = "--enable-ipv6,--disable-ipv6"
+PACKAGECONFIG[nolongdouble] = "--disable-longdouble,"
+PACKAGECONFIG[ssl] = "--with-openssl,--without-openssl,openssl,openssl"
+
+CFLAGS += "-I${STAGING_INCDIR}/python${PYTHON_BASEVERSION}"
+CXXFLAGS += "-I${STAGING_INCDIR}/python${PYTHON_BASEVERSION}"
 
 CONFFILES:${PN} += "/etc/omniORB.cfg"
 FILES:${PN}-dev += "${libdir}/python${PYTHON_BASEVERSION}"
