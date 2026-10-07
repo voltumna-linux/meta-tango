@@ -1,0 +1,100 @@
+From beea5d7fce128bfcf2bb5db43c22dbe31664e835 Mon Sep 17 00:00:00 2001
+From: Thomas Wolber <thomas.wolber@bruker.com>
+Date: Tue, 1 Jul 2025 13:28:24 +0000
+Subject: [PATCH] add pkg-config for omnisslTP4 and omniCodeSets4
+
+---
+ configure                             |  5 +++--
+ configure.ac                          |  2 ++
+ contrib/pkgconfig/GNUmakefile.in      |  2 +-
+ contrib/pkgconfig/omniCodeSets4.pc.in | 11 +++++++++++
+ contrib/pkgconfig/omnisslTP4.pc.in    | 11 +++++++++++
+ 5 files changed, 28 insertions(+), 3 deletions(-)
+ create mode 100644 contrib/pkgconfig/omniCodeSets4.pc.in
+ create mode 100644 contrib/pkgconfig/omnisslTP4.pc.in
+
+diff --git a/configure b/configure
+index 4dbd901..a240a40 100755
+--- a/configure
++++ b/configure
+@@ -7612,7 +7612,7 @@ ac_config_files="$ac_config_files etc/init.d/omniNames"
+ ac_config_files="$ac_config_files contrib/GNUmakefile contrib/pkgconfig/GNUmakefile"
+ 
+ 
+-ac_config_files="$ac_config_files contrib/pkgconfig/omnithread3.pc contrib/pkgconfig/omniORB4.pc contrib/pkgconfig/omniDynamic4.pc contrib/pkgconfig/omniCOS4.pc contrib/pkgconfig/omniCOSDynamic4.pc contrib/pkgconfig/omniConnectionMgmt4.pc contrib/pkgconfig/omniZIOP4.pc contrib/pkgconfig/omniZIOPDynamic4.pc"
++ac_config_files="$ac_config_files contrib/pkgconfig/omnithread3.pc contrib/pkgconfig/omniORB4.pc contrib/pkgconfig/omniDynamic4.pc contrib/pkgconfig/omniCOS4.pc contrib/pkgconfig/omniCOSDynamic4.pc contrib/pkgconfig/omniConnectionMgmt4.pc contrib/pkgconfig/omniZIOP4.pc contrib/pkgconfig/omniZIOPDynamic4.pc contrib/pkgconfig/omnisslTP4.pc contrib/pkgconfig/omniCodeSets4.pc"
+ 
+ cat >confcache <<\_ACEOF
+ # This file is a shell script that caches the results of configure
+@@ -8400,6 +8400,8 @@ do
+     "contrib/pkgconfig/omniConnectionMgmt4.pc") CONFIG_FILES="$CONFIG_FILES contrib/pkgconfig/omniConnectionMgmt4.pc" ;;
+     "contrib/pkgconfig/omniZIOP4.pc") CONFIG_FILES="$CONFIG_FILES contrib/pkgconfig/omniZIOP4.pc" ;;
+     "contrib/pkgconfig/omniZIOPDynamic4.pc") CONFIG_FILES="$CONFIG_FILES contrib/pkgconfig/omniZIOPDynamic4.pc" ;;
++    "contrib/pkgconfig/omnisslTP4.pc") CONFIG_FILES="$CONFIG_FILES contrib/pkgconfig/omnisslTP4.pc" ;;
++    "contrib/pkgconfig/omniCodeSets4.pc") CONFIG_FILES="$CONFIG_FILES contrib/pkgconfig/omniCodeSets4.pc" ;;
+ 
+   *) as_fn_error $? "invalid argument: \`$ac_config_target'" "$LINENO" 5;;
+   esac
+@@ -8985,4 +8987,3 @@ if test -n "$ac_unrecognized_opts" && test "$enable_option_checking" != no; then
+   { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: unrecognized options: $ac_unrecognized_opts" >&5
+ $as_echo "$as_me: WARNING: unrecognized options: $ac_unrecognized_opts" >&2;}
+ fi
+-
+diff --git a/configure.ac b/configure.ac
+index ebcc263..09cd3fa 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -357,4 +357,6 @@ contrib/pkgconfig/omniCOSDynamic4.pc
+ contrib/pkgconfig/omniConnectionMgmt4.pc
+ contrib/pkgconfig/omniZIOP4.pc
+ contrib/pkgconfig/omniZIOPDynamic4.pc
++contrib/pkgconfig/omnisslTP4.pc
++contrib/pkgconfig/omniCodeSets4.pc
+ ])
+diff --git a/contrib/pkgconfig/GNUmakefile.in b/contrib/pkgconfig/GNUmakefile.in
+index 2906a19..8795c13 100644
+--- a/contrib/pkgconfig/GNUmakefile.in
++++ b/contrib/pkgconfig/GNUmakefile.in
+@@ -8,7 +8,7 @@ INSTALLDIR = $(INSTALLLIBDIR)/pkgconfig
+ 
+ PKGFILES = omnithread3.pc omniORB4.pc omniDynamic4.pc \
+            omniCOS4.pc omniCOSDynamic4.pc omniConnectionMgmt4.pc \
+-           omniZIOP4.pc omniZIOPDynamic4.pc
++           omniZIOP4.pc omniZIOPDynamic4.pc omnisslTP4.pc omniCodeSets4.pc
+ 
+ include $(TOP)/mk/beforeauto.mk
+ 
+diff --git a/contrib/pkgconfig/omniCodeSets4.pc.in b/contrib/pkgconfig/omniCodeSets4.pc.in
+new file mode 100644
+index 0000000..06b8f15
+--- /dev/null
++++ b/contrib/pkgconfig/omniCodeSets4.pc.in
+@@ -0,0 +1,11 @@
++prefix=@prefix@
++exec_prefix=@exec_prefix@
++libdir=@libdir@
++includedir=@includedir@
++
++Name: omniCodeSets4
++Description: omniORB extra code sets for string transformation
++Version: @PACKAGE_VERSION@
++Requires: omniORB4
++Libs: -L${libdir} -lomniCodeSets4
++Cflags:
+diff --git a/contrib/pkgconfig/omnisslTP4.pc.in b/contrib/pkgconfig/omnisslTP4.pc.in
+new file mode 100644
+index 0000000..9fc8da4
+--- /dev/null
++++ b/contrib/pkgconfig/omnisslTP4.pc.in
+@@ -0,0 +1,11 @@
++prefix=@prefix@
++exec_prefix=@exec_prefix@
++libdir=@libdir@
++includedir=@includedir@
++
++Name: omnisslTP4
++Description: omniORB SSL Transport Library
++Version: @PACKAGE_VERSION@
++Requires: omniORB4
++Libs: -L${libdir} -lomnisslTP4
++Cflags:
