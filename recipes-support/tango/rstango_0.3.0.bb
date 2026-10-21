@@ -8,8 +8,6 @@ inherit rust cargo cargo-update-recipe-crates pkgconfig
 SRC_URI = "git://gitlab.com/theorozier/rstango.git;protocol=https;branch=main"
 SRCREV = "eb7eb59222c64fb4e317cc89fa3819965dbd9a90"
 
-DEPENDS += "omniorb"
-
 require ${BPN}-crates.inc
 
 # Install the workspace libraries (tango, tango_omniorb) next to the tgtop binary
